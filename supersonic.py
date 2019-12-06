@@ -1,9 +1,9 @@
 #!/usr/bin/python
 """
-HC-SR04(gnd)  GPIO6”Ôƒsƒ“(GND)
-HC-SR04(trig) GPIO21”Ôƒsƒ“
-HC-SR04(echo) GPIO20”Ôƒsƒ“
-HC-SR04(vcc)  GPIO4”Ôƒsƒ“(5V)
+HC-SR04(gnd)  GPIO6ç•ªãƒ”ãƒ³(GND)
+HC-SR04(trig) GPIO21ç•ªãƒ”ãƒ³
+HC-SR04(echo) GPIO20ç•ªãƒ”ãƒ³
+HC-SR04(vcc)  GPIO4ç•ªãƒ”ãƒ³(5V)
 """
 
 import RPi.GPIO as GPIO
@@ -12,49 +12,49 @@ import time
 
 def pulse_in(pin, value=GPIO.HIGH, timeout=1.0):
     """
-    ƒsƒ“‚É“ü—Í‚³‚ê‚éƒpƒ‹ƒX‚ğŒŸo‚µ‚Ü‚·B
-    value‚ğHIGH‚Éw’è‚µ‚½ê‡Apulse_inŠÖ”‚Í“ü—Í‚ªHIGH‚É•Ï‚í‚é‚Æ“¯‚ÉŠÔ‚ÌŒv‘ª‚ğn‚ßA
-    ‚Ü‚½LOW‚É–ß‚é‚Ü‚Å‚ÌŠÔ(‚Â‚Ü‚èƒpƒ‹ƒX‚Ì’·‚³)‚ğƒ}ƒCƒNƒ•b’PˆÊ(*1)‚Å•Ô‚µ‚Ü‚·B
-    ƒ^ƒCƒ€ƒAƒEƒg‚ğw’è‚µ‚½ê‡‚ÍA‚»‚ÌŠÔ‚ğ’´‚¦‚½“_‚Å0‚ğ•Ô‚µ‚Ü‚·B
-    *1 python‚Ìê‡‚ÍtimeƒpƒbƒP[ƒW‚Ìd—l‚É‚æ‚èÀ‘•ˆË‘¶‚Å‚·‚ªAŠT‚Ënanosec‚Å•Ô‚é‚Æv‚¢‚Ü‚·B
-    :param pin: ƒsƒ“”Ô†A‚Ü‚½‚ÍGPIO ”Ô†(GPIO.setmode‚ÉˆË‘¶B)
-    :param value: ƒpƒ‹ƒX‚Ìí—Ş(GPIO.HIGH ‚© GPIO.LOWBdefault:GPIO.HIGH)
-    :param timeout: ƒ^ƒCƒ€ƒAƒEƒg(default:1sec)
-    :return: ƒpƒ‹ƒX‚Ì’·‚³i•bjƒ^ƒCƒ€ƒAƒEƒg‚Í0
+    ãƒ”ãƒ³ã«å…¥åŠ›ã•ã‚Œã‚‹ãƒ‘ãƒ«ã‚¹ã‚’æ¤œå‡ºã—ã¾ã™ã€‚
+    valueã‚’HIGHã«æŒ‡å®šã—ãŸå ´åˆã€pulse_iné–¢æ•°ã¯å…¥åŠ›ãŒHIGHã«å¤‰ã‚ã‚‹ã¨åŒæ™‚ã«æ™‚é–“ã®è¨ˆæ¸¬ã‚’å§‹ã‚ã€
+    ã¾ãŸLOWã«æˆ»ã‚‹ã¾ã§ã®æ™‚é–“(ã¤ã¾ã‚Šãƒ‘ãƒ«ã‚¹ã®é•·ã•)ã‚’ãƒã‚¤ã‚¯ãƒ­ç§’å˜ä½(*1)ã§è¿”ã—ã¾ã™ã€‚
+    ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã‚’æŒ‡å®šã—ãŸå ´åˆã¯ã€ãã®æ™‚é–“ã‚’è¶…ãˆãŸæ™‚ç‚¹ã§0ã‚’è¿”ã—ã¾ã™ã€‚
+    *1 pythonã®å ´åˆã¯timeãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®ä»•æ§˜ã«ã‚ˆã‚Šå®Ÿè£…ä¾å­˜ã§ã™ãŒã€æ¦‚ã­nanosecã§è¿”ã‚‹ã¨æ€ã„ã¾ã™ã€‚
+    :param pin: ãƒ”ãƒ³ç•ªå·ã€ã¾ãŸã¯GPIO ç•ªå·(GPIO.setmodeã«ä¾å­˜ã€‚)
+    :param value: ãƒ‘ãƒ«ã‚¹ã®ç¨®é¡(GPIO.HIGH ã‹ GPIO.LOWã€‚default:GPIO.HIGH)
+    :param timeout: ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ(default:1sec)
+    :return: ãƒ‘ãƒ«ã‚¹ã®é•·ã•ï¼ˆç§’ï¼‰ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆæ™‚ã¯0
     """
     start_time = time.time()
     not_value = (not value)
 
-    # ‘O‚Ìƒpƒ‹ƒX‚ªI—¹‚·‚é‚Ì‚ğ‘Ò‚Â
+    # å‰ã®ãƒ‘ãƒ«ã‚¹ãŒçµ‚äº†ã™ã‚‹ã®ã‚’å¾…ã¤
     while GPIO.input(pin) == value:
         if time.time() - start_time > timeout:
             return 0
 
-    # ƒpƒ‹ƒX‚ªn‚Ü‚é‚Ì‚ğ‘Ò‚Â
+    # ãƒ‘ãƒ«ã‚¹ãŒå§‹ã¾ã‚‹ã®ã‚’å¾…ã¤
     while GPIO.input(pin) == not_value:
         if time.time() - start_time > timeout:
             return 0
 
-    # ƒpƒ‹ƒXŠJn‚ğ‹L˜^
+    # ãƒ‘ãƒ«ã‚¹é–‹å§‹æ™‚åˆ»ã‚’è¨˜éŒ²
     start = time.time()
 
-    # ƒpƒ‹ƒX‚ªI—¹‚·‚é‚Ì‚ğ‘Ò‚Â
+    # ãƒ‘ãƒ«ã‚¹ãŒçµ‚äº†ã™ã‚‹ã®ã‚’å¾…ã¤
     while GPIO.input(pin) == value:
         if time.time() - start_time > timeout:
             return 0
 
-    # ƒpƒ‹ƒXI—¹‚ğ‹L˜^
+    # ãƒ‘ãƒ«ã‚¹çµ‚äº†æ™‚åˆ»ã‚’è¨˜éŒ²
     end = time.time()
 
     return end - start
 
 def init_sensors(trig, echo, mode=GPIO.BCM):
     """
-    ‰Šú‰»‚µ‚Ü‚·
-    :param trig: Trigger—pƒsƒ“”Ô†A‚Ü‚½‚ÍGPIO ”Ô†
-    :param echo: Echo—pƒsƒ“”Ô†A‚Ü‚½‚ÍGPIO ”Ô†
-    :param mode: GPIO.BCMA‚Ü‚½‚Í GPIO.BOARD (default:GPIO.BCM)
-    :return: ‚È‚µ
+    åˆæœŸåŒ–ã—ã¾ã™
+    :param trig: Triggerç”¨ãƒ”ãƒ³ç•ªå·ã€ã¾ãŸã¯GPIO ç•ªå·
+    :param echo: Echoç”¨ãƒ”ãƒ³ç•ªå·ã€ã¾ãŸã¯GPIO ç•ªå·
+    :param mode: GPIO.BCMã€ã¾ãŸã¯ GPIO.BOARD (default:GPIO.BCM)
+    :return: ãªã—
     """
     GPIO.cleanup()
     GPIO.setmode(mode)
@@ -63,26 +63,26 @@ def init_sensors(trig, echo, mode=GPIO.BCM):
 
 def get_distance(trig, echo, temp=15):
     """
-    ‹——£‚ğæ“¾‚µ‚Ü‚·Bæ“¾‚É¸”s‚µ‚½ê‡‚Í0‚ğ•Ô‚µ‚Ü‚·B
-    :param trig: Trigger—pƒsƒ“”Ô†A‚Ü‚½‚ÍGPIO ”Ô†(GPIO.setmode‚ÉˆË‘¶B)(GPIO.OUT)
-    :param echo: Echo—pƒsƒ“”Ô†A‚Ü‚½‚ÍGPIO ”Ô†(GPIO.setmode‚ÉˆË‘¶B)(GPIO.IN)
-    :param temp: æ“¾‰Â”\‚Å‚ ‚ê‚Î‰·“x(default:15)
-    :return: ‹——£i‚ƒ‚jƒ^ƒCƒ€ƒAƒEƒg‚Í 0
+    è·é›¢ã‚’å–å¾—ã—ã¾ã™ã€‚å–å¾—ã«å¤±æ•—ã—ãŸå ´åˆã¯0ã‚’è¿”ã—ã¾ã™ã€‚
+    :param trig: Triggerç”¨ãƒ”ãƒ³ç•ªå·ã€ã¾ãŸã¯GPIO ç•ªå·(GPIO.setmodeã«ä¾å­˜ã€‚)(GPIO.OUT)
+    :param echo: Echoç”¨ãƒ”ãƒ³ç•ªå·ã€ã¾ãŸã¯GPIO ç•ªå·(GPIO.setmodeã«ä¾å­˜ã€‚)(GPIO.IN)
+    :param temp: å–å¾—å¯èƒ½ã§ã‚ã‚Œã°æ¸©åº¦(default:15â„ƒ)
+    :return: è·é›¢ï¼ˆï½ƒï½ï¼‰ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆæ™‚ã¯ 0
     """
 
-    # o—Í‚ğ‰Šú‰»
+    # å‡ºåŠ›ã‚’åˆæœŸåŒ–
     GPIO.output(trig, GPIO.LOW)
     time.sleep(0.3)
-    # o—Í(10usˆÈã‘Ò‚Â)
+    # å‡ºåŠ›(10usä»¥ä¸Šå¾…ã¤)
     GPIO.output(trig, GPIO.HIGH)
     time.sleep(0.000011)
-    # o—Í’â~
+    # å‡ºåŠ›åœæ­¢
     GPIO.output(trig, GPIO.LOW)
 
-    # echo ‚©‚çƒpƒ‹ƒX‚ğæ“¾
+    # echo ã‹ã‚‰ãƒ‘ãƒ«ã‚¹ã‚’å–å¾—
     dur = pulse_in(echo, GPIO.HIGH, 1.0)
 
-    # ( ƒpƒ‹ƒXŠÔ x 331.50 + 0.61 * ‰·“x ) x (’PˆÊ‚ğcm‚É•ÏŠ·) x ‰•œ
+    # ( ãƒ‘ãƒ«ã‚¹æ™‚é–“ x 331.50 + 0.61 * æ¸©åº¦ ) x (å˜ä½ã‚’cmã«å¤‰æ›) x å¾€å¾©
     # return dur * (331.50 + 0.61 * temp) * 100 / 2
     return dur * (331.50 + 0.61 * temp) * 50
 
@@ -94,5 +94,5 @@ if __name__ == "__main__":
 
     init_sensors(GPIO_TRIG, GPIO_ECHO)
     while True:
-        print("‹——£F{0} cm".format(get_distance(GPIO_TRIG, GPIO_ECHO)))
+        print("è·é›¢ï¼š{0} cm".format(get_distance(GPIO_TRIG, GPIO_ECHO)))
         time.sleep(2)
