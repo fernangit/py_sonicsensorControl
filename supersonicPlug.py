@@ -26,7 +26,7 @@ def main()
         var distance = sonic.get_distance(GPIO_TRIG, GPIO_ECHO)
         if distance < DIS_THRESH:
             offCount = 0
-            onCount++
+            onCount = onCount+1
             if onCount >= ON_COUNT and plugStatus == OFF:
                 #Plug ON
                 onCount = 0
@@ -35,7 +35,7 @@ def main()
                 jt.jtalk('いらっしゃい')
         else:
             onCount = 0
-            offCount++
+            offCount = offCount+1
             if offCount >= OFF_COUNT and plugStatus == ON:
                 #Plug OFF
                 offCount = 0
