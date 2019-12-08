@@ -1,23 +1,23 @@
-# ras_py_sonicsensorControl
+# ras_py_SonicsensorControl
 mesure distance by sonicsensor on the raspberry pie  
 ---
-HC-SR04’´‰¹”gƒZƒ“ƒT[‚É‚æ‚é’´‰¹”g‘ª’è
+HC-SR04è¶…éŸ³æ³¢ã‚»ãƒ³ã‚µãƒ¼ã«ã‚ˆã‚‹è¶…éŸ³æ³¢æ¸¬å®š
 
 ## HOW TO USE
-### ”zü  
-ƒ‰ƒYƒpƒC‚ÆHC|SR04‚ðÚ‘±‚·‚éB
-* HC-SR04(gnd)¨GPIO6”Ôƒsƒ“(GND)
-* HC-SR04(trig)¨GPIO21”Ôƒsƒ“
-* HC-SR04(echo)¨GPIO20”Ôƒsƒ“
-* HC-SR04(vcc)¨GPIO4”Ôƒsƒ“(5V)
+### é…ç·š  
+ãƒ©ã‚ºãƒ‘ã‚¤ã¨HCï¼SR04ã‚’æŽ¥ç¶šã™ã‚‹ã€‚
+* HC-SR04(gnd)â†’GPIO6ç•ªãƒ”ãƒ³(GND)
+* HC-SR04(trig)â†’GPIO21ç•ªãƒ”ãƒ³
+* HC-SR04(echo)â†’GPIO20ç•ªãƒ”ãƒ³
+* HC-SR04(vcc)â†’GPIO4ç•ªãƒ”ãƒ³(5V)
 
-#### ƒXƒNƒŠƒvƒgŽÀs  
-ˆÈ‰º‚ÌƒRƒ}ƒ“ƒh‚ÅŒv‘ª‹——£•\Ž¦  
+#### ã‚¹ã‚¯ãƒªãƒ—ãƒˆå®Ÿè¡Œ  
+ä»¥ä¸‹ã®ã‚³ãƒžãƒ³ãƒ‰ã§è¨ˆæ¸¬è·é›¢è¡¨ç¤º  
 ```
 python3 supersonic.py
 ```
 
-#### ƒ‚ƒWƒ…[ƒ‹‚©‚ç‚ÌŒÄ‚Ño‚µ
+#### ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‹ã‚‰ã®å‘¼ã³å‡ºã—
 ```
 import supersonic as sonic
     GPIO_TRIG = 21
@@ -31,9 +31,9 @@ import supersonic as sonic
 ```
 
 
-## ŽQlî•ñ
-’´‰¹”g‹——£ƒZƒ“ƒT‚ÌŽd‘g‚Ý[HC-SR04‚Æƒ‰ƒYƒpƒC‚Ìê‡]  
+## å‚è€ƒæƒ…å ±
+è¶…éŸ³æ³¢è·é›¢ã‚»ãƒ³ã‚µã®ä»•çµ„ã¿[HC-SR04ã¨ãƒ©ã‚ºãƒ‘ã‚¤ã®å ´åˆ]  
 https://mio.yokohama/?p=532  
-‘ª‹—ƒZƒ“ƒT[(HC-SR04)‚ÆRaspberry Pi‚ð‚Â‚È‚¢‚Å‚Ý‚é  
+æ¸¬è·ã‚»ãƒ³ã‚µãƒ¼(HC-SR04)ã¨Raspberry Piã‚’ã¤ãªã„ã§ã¿ã‚‹  
 https://umiushizn.blogspot.com/2017/10/hc-sr04raspberry-pi.html  
 
